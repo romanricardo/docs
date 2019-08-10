@@ -1,0 +1,99 @@
+package facebook;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class engineTest {
+
+public static void main(String[] args) throws Exception {
+
+
+
+ChromeOptions coptions = new ChromeOptions();
+coptions.addArguments("--disable-notifications");
+
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\l0685135\\Downloads\\DRIVERS\\chromedriver.exe");
+
+WebDriver driver = new ChromeDriver();
+
+driver = new ChromeDriver(coptions);
+
+driver.get("https://es-la.facebook.com/");
+
+driver.manage().window().maximize();
+
+WebElement Unm = driver.findElement(By.id("email"));
+
+
+Unm.sendKeys("enginetestbot3@gmail.com");
+
+driver.findElement(By.name("pass")).sendKeys("enginetest0908");
+
+
+driver.findElement(By.id("loginbutton")).click();
+
+WebElement TextArea = driver.findElement(By.name("xhpc_message"));
+TextArea.click();
+TextArea.sendKeys("Hola a todos");
+
+WebElement PostBtn = driver.findElement(By.cssSelector
+("button[data-testid='react-composer-post-button']"));
+PostBtn.click();
+
+Thread.sleep(4000);
+
+
+
+WebElement PostBotn = driver.findElement(By.cssSelector("button[class='_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy']"));
+PostBotn.click();
+
+
+
+
+
+
+WebElement elemento = driver.findElement(By.className("_5afe"));
+
+String data0 = elemento.getAttribute("href");
+
+System.out.println("href  :" +data0);
+
+
+  driver.get(data0);
+
+
+
+
+
+}
+
+}
+
+
+//java.version: '12.0.2'
+
+//commons-codec-1.10.jar
+
+//commons-collections4-4.1.jar
+
+//poi-3.17.jar
+
+//client-combined-3.141.59.jar
+
+//client-combined-3.141.59-sources.jar
+
+//byte-buddy-1.8.15.jar
+
+//commons-exec-1.3.jar
+
+//guava-25.0-jre.jar
+
+//okhttp-3.11.0.jar
+
+//okio-1.14.0.jar
